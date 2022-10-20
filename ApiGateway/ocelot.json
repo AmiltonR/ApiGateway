@@ -308,6 +308,54 @@
           "Port": 7004
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/Taller/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/Taller/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/Taller/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Taller/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/Taller",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/Taller",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/Taller",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/Taller",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ]
     }
   ],
       "Aggregates": [
