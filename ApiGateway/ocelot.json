@@ -270,7 +270,8 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
+      ],
+
     },
     //HORARIOS
     {
@@ -283,7 +284,14 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/horario/{id}",
@@ -295,7 +303,14 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/horario/{id}",
@@ -307,7 +322,14 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Taller/{id}",
@@ -319,7 +341,14 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Taller/{id}",
@@ -331,19 +360,14 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/api/Taller",
-      "UpstreamHttpMethod": [ "Put" ],
-      "DownstreamPathTemplate": "/api/Taller",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7004
-        }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Taller",
@@ -355,7 +379,14 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     }
   ],
       "Aggregates": [
