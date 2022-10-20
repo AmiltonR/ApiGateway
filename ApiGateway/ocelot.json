@@ -18,7 +18,39 @@
     },
     {
       "UpstreamPathTemplate": "/api/Users",
-      "UpstreamHttpMethod": [],
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "usuarios",
+      "DownstreamPathTemplate": "/api/Users",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Users",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamHttpMethod": [ "Put" ],
       "DownstreamPathTemplate": "/api/Users",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -257,7 +289,7 @@
           "Host": "localhost",
           "Port": 7004
         }
-      ],
+      ]
 
     },
     //HORARIOS
