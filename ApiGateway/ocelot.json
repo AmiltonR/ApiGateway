@@ -29,25 +29,25 @@
         }
       ]
     },
-    //{
-    //  "UpstreamPathTemplate": "/api/Users",
-    //  "UpstreamHttpMethod": [],
-    //  "DownstreamPathTemplate": "/api/Users",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "localhost",
-    //      "Port": 7002
-    //    }
-    //  ],
-    //  "AuthenticationOptions": {
-    //    "AuthenticationProviderKey": "Bearer",
-    //    "AllowedScopes": []
-    //  },
-    //  "RouteClaimsRequirement": {
-    //    "Role": "1"
-    //  }
-    //},
+    {
+      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/Users",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
     {
       "UpstreamPathTemplate": "/api/Users/{id}",
       "UpstreamHttpMethod": [ "Get" ],
