@@ -4,6 +4,7 @@
   },
 
   "Routes": [
+    //Tokens
     {
       "UpstreamPathTemplate": "/api/Account",
       "UpstreamHttpMethod": [ "Post" ],
@@ -16,18 +17,186 @@
         }
       ]
     },
+    //Todos los usuarios
     {
-      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamPathTemplate": "/api/Users/all",
       "UpstreamHttpMethod": [ "Get" ],
       "Key": "usuarios",
-      "DownstreamPathTemplate": "/api/Users",
+      "DownstreamPathTemplate": "/api/Users/all",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 7002
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //usuarios activos
+    {
+      "UpstreamPathTemplate": "/api/Users/active",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/active",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //usuarios inactivos
+    {
+      "UpstreamPathTemplate": "/api/Users/inactive",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/inactive",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Usuarios rol 1 y 3
+    {
+      "UpstreamPathTemplate": "/api/Users/usuarios",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/usuarios",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Usuarios Instructor
+    {
+      "UpstreamPathTemplate": "/api/Users/instructores",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/instructores",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Usuarios Instructor
+    {
+      "UpstreamPathTemplate": "/api/Users/instructor/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/instructor/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Get by ID
+    {
+      "UpstreamPathTemplate": "/api/Users/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Get by Carnet
+    {
+      "UpstreamPathTemplate": "/api/Users/carnet/{carnet}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/carnet/{carnet}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Get by Carnet
+    {
+      "UpstreamPathTemplate": "/api/Users/nombre/{nombre}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/nombre/{nombre}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Users",
@@ -67,10 +236,11 @@
         "Role": "1"
       }
     },
+    //Activar o desactivar cuenta de usuario
     {
-      "UpstreamPathTemplate": "/api/Users/{id}",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/Users/{id}",
+      "UpstreamPathTemplate": "/api/Users/setactiveinactive/{opt}/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/Users/setactiveinactive/{opt}/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -86,10 +256,11 @@
         "Role": "1"
       }
     },
+    //Nueva cuenta Instructor
     {
-      "UpstreamPathTemplate": "/api/Users/{id}",
-      "UpstreamHttpMethod": [ "Put" ],
-      "DownstreamPathTemplate": "/api/Users/{id}",
+      "UpstreamPathTemplate": "/api/Instructor/nuevacuenta",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Instructor/nuevacuenta",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -406,18 +577,185 @@
       "RouteClaimsRequirement": {
         "Role": "1"
       }
-    }
-  ],
-      "Aggregates": [
+    },
+    //TALLER PROGRAMACION -------------------
+    //TODOS
+
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-          "RouteKeys": [
-            "talleres",
-            "usuarios"
-          ],
-          "UpstreamPathTemplate": "/api/participantes",
-          
-          "Aggregator": "MyAggregator"
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //GET BY ID
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //GET Aggregator
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "talleresProgramacion",
+      "DownstreamPathTemplate": "/api/TallerProgramacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //DELETE
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //PUBLICO -------------------------------------------
+    {
+      "UpstreamPathTemplate": "/api/Publico",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Publico",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //PATROCINADOR
+    //GET
+    {
+      "UpstreamPathTemplate": "/api/Patrocinador",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Patrocinador",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Prueba con NodeJS
+    {
+      "UpstreamPathTemplate": "/api/costarica",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/costarica",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8181
         }
       ]
     }
+  ],
+  //AGREGADOS
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "talleres",
+        "usuarios"
+      ],
+      "UpstreamPathTemplate": "/api/participantes",
+
+      "Aggregator": "MyAggregator"
+    },
+    {
+      "RouteKeys": [
+        "talleresProgramacion",
+        "usuarios"
+      ],
+      "UpstreamPathTemplate": "/api/programaciontalleres",
+
+      "Aggregator": "TalleresProgramacionAggregator"
+    }
+  ]
+
+}
   

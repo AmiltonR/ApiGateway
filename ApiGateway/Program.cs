@@ -44,7 +44,8 @@ builder.Services.AddSingleton<MyAggregator>();
 
 builder.Services.AddOcelot().
                     AddDelegatingHandler<NoEncodingHandler>(true)
-                    .AddTransientDefinedAggregator<MyAggregator>();
+                    .AddTransientDefinedAggregator<MyAggregator>()
+                    .AddTransientDefinedAggregator<TalleresProgramacionAggregator>();
 
 builder.Services.AddCustomJwtAuthentication();
 
