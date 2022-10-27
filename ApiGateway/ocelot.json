@@ -118,11 +118,31 @@
         "Role": "1"
       }
     },
-    //Usuarios Instructor
+    //Usuarios Instructor by id
     {
       "UpstreamPathTemplate": "/api/Users/instructor/{id}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/Users/instructor/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Usuarios Instructor by Habilidad
+    {
+      "UpstreamPathTemplate": "/api/Users/instructoreshabilidad/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/instructoreshabilidad/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
