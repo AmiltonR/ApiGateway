@@ -296,6 +296,26 @@
         "Role": "1"
       }
     },
+    //Cambiar de rol estudiante a rol instructor
+    {
+      "UpstreamPathTemplate": "/api/Instructor/cambiorol",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Instructor/cambiorol",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
     //LIBROS ENCABEZADO
     {
       "UpstreamPathTemplate": "/api/Books",
