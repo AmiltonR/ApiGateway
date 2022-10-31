@@ -276,6 +276,26 @@
         "Role": "1"
       }
     },
+    //Cambiar rol bibliotecario a estudiante y viceversa
+    {
+      "UpstreamPathTemplate": "/api/Users/cambiarrol",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/api/Users/cambiarrol",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
     //Nueva cuenta Instructor
     {
       "UpstreamPathTemplate": "/api/Instructor/nuevacuenta",
@@ -301,6 +321,25 @@
       "UpstreamPathTemplate": "/api/Instructor/cambiorol",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamPathTemplate": "/api/Instructor/cambiorol",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Instructor",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/Instructor",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -797,7 +836,7 @@
     //Habilidades
     {
       "UpstreamPathTemplate": "/api/Habilidad",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [ ],
       "DownstreamPathTemplate": "/api/Habilidad",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
