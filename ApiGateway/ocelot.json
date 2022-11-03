@@ -175,7 +175,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": [ "User", "Admin" ]
       }
     },
     //Get by Carnet
@@ -836,8 +836,27 @@
     //Habilidades
     {
       "UpstreamPathTemplate": "/api/Habilidad",
-      "UpstreamHttpMethod": [ ],
+      "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/Habilidad",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Habilidad/{id}",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamPathTemplate": "/api/Habilidad/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
