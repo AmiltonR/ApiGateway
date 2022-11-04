@@ -799,25 +799,44 @@
         "Role": "1"
       }
     },
-      {
-        "UpstreamPathTemplate": "/api/Patrocinador/{id}",
-        "UpstreamHttpMethod": [ "Get" ],
-        "DownstreamPathTemplate": "/api/Patrocinador/{id}",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "localhost",
-            "Port": 7004
-          }
-        ],
-        "AuthenticationOptions": {
-          "AuthenticationProviderKey": "Bearer",
-          "AllowedScopes": []
-        },
-        "RouteClaimsRequirement": {
-          "Role": "1"
+    {
+      "UpstreamPathTemplate": "/api/Patrocinador/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Patrocinador/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
         }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
       }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Patrocinador/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/Patrocinador/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    }
    ,
     //Prueba con NodeJS
     {
