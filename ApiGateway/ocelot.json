@@ -175,7 +175,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": [ "User", "Admin" ]
+        "Role": "1"
       }
     },
     //Get by Carnet
