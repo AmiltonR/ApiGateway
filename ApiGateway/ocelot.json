@@ -780,10 +780,9 @@
       }
     },
     //PATROCINADOR
-    //GET
     {
       "UpstreamPathTemplate": "/api/Patrocinador",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/Patrocinador",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -800,6 +799,26 @@
         "Role": "1"
       }
     },
+      {
+        "UpstreamPathTemplate": "/api/Patrocinador/{id}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamPathTemplate": "/api/Patrocinador/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7004
+          }
+        ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        "RouteClaimsRequirement": {
+          "Role": "1"
+        }
+      }
+   ,
     //Prueba con NodeJS
     {
       "UpstreamPathTemplate": "/api/costarica",
@@ -855,7 +874,7 @@
     },
     {
       "UpstreamPathTemplate": "/api/Habilidad/{id}",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/Habilidad/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
