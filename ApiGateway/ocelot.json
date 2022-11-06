@@ -762,8 +762,27 @@
     //PUBLICO -------------------------------------------
     {
       "UpstreamPathTemplate": "/api/Publico",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [  ],
       "DownstreamPathTemplate": "/api/Publico",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Publico/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Publico/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -836,8 +855,7 @@
       "RouteClaimsRequirement": {
         "Role": "1"
       }
-    }
-   ,
+    },
     //Prueba con NodeJS
     {
       "UpstreamPathTemplate": "/api/costarica",
