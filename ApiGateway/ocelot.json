@@ -98,6 +98,26 @@
         "Role": "1"
       }
     },
+    //Usuarios Estudiantes
+    {
+      "UpstreamPathTemplate": "/api/Users/estudiantes",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Users/estudiantes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7002
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
     //Usuarios Instructor
     {
       "UpstreamPathTemplate": "/api/Users/instructores",
@@ -762,7 +782,7 @@
     //PUBLICO -------------------------------------------
     {
       "UpstreamPathTemplate": "/api/Publico",
-      "UpstreamHttpMethod": [  ],
+      "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/Publico",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

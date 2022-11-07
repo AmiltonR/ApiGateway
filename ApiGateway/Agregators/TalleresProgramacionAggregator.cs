@@ -13,6 +13,8 @@ namespace ApiGateway.Agregators
     {
         public async Task<DownstreamResponse> Aggregate(List<HttpContext> responses)
         {
+            //TODO
+            //Agregar Try-catch
             var talleres = await responses[0].Items.DownstreamResponse().Content.ReadFromJsonAsync<List<TallerProgramacionDTO>>();
             var usuarios = await responses[1].Items.DownstreamResponse().Content.ReadFromJsonAsync<List<UsuariosTProgramacionDTO>>();
 
