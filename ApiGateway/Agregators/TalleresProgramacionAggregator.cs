@@ -20,6 +20,7 @@ namespace ApiGateway.Agregators
 
             TallerProgramacionRespuestaDTO listado = new TallerProgramacionRespuestaDTO();
 
+            //recorremos
             talleres?.ForEach(taller =>
             {
                 taller.usuario.AddRange(usuarios.Where(a => a.Id == taller.IdUsuarioInstructor));
