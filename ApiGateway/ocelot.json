@@ -26,8 +26,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -46,8 +46,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -66,8 +66,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -86,8 +86,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -106,8 +106,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -126,8 +126,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -146,8 +146,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -166,8 +166,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -186,8 +186,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -206,8 +206,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -226,8 +226,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -245,8 +245,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -264,8 +264,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -284,8 +284,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -304,8 +304,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -324,8 +324,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -344,8 +344,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -363,8 +363,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "usuarios",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -383,8 +383,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -402,8 +402,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -421,8 +421,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -440,8 +440,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -459,8 +459,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -478,8 +478,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -497,8 +497,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -516,8 +516,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -535,8 +535,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "libros",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -556,8 +556,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ]
 
@@ -570,8 +570,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -589,8 +589,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -608,8 +608,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -627,8 +627,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -646,8 +646,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -665,8 +665,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -687,8 +687,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -706,8 +706,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -726,8 +726,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -747,8 +747,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -767,8 +767,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -787,8 +787,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -806,8 +806,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -826,8 +826,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -845,8 +845,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -864,8 +864,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -876,19 +876,19 @@
         "Role": "1"
       }
     },
-    //Prueba con NodeJS
-    {
-      "UpstreamPathTemplate": "/api/costarica",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/costarica",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 8181
-        }
-      ]
-    },
+    ////Prueba con NodeJS
+    //{
+    //  "UpstreamPathTemplate": "/api/costarica",
+    //  "UpstreamHttpMethod": [ "Get" ],
+    //  "DownstreamPathTemplate": "/api/costarica",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "talleres",
+    //      "Port": 8181
+    //    }
+    //  ]
+    //},
     //Grados
     {
       "UpstreamPathTemplate": "/api/Grado",
@@ -897,8 +897,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -917,8 +917,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
@@ -936,8 +936,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7002
+          "Host": "talleres",
+          "Port": 80
         }
       ],
       "AuthenticationOptions": {
