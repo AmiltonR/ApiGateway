@@ -917,7 +917,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "talleres",
+          "Host": "usuarios",
           "Port": 80
         }
       ],
@@ -936,7 +936,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "talleres",
+          "Host": "usuarios",
           "Port": 80
         }
       ],
