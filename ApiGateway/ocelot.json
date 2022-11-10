@@ -12,7 +12,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "Identity.API",
+          "Host": "localhost",
           "Port": 7001
         }
       ]
