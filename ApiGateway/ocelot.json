@@ -12,7 +12,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "Identity_URL",
+          "Host": "localhost",
           "Port": 7001
         }
       ]
