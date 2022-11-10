@@ -383,7 +383,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "Libros.API",
           "Port": 7003
         }
       ],
