@@ -35,7 +35,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1,2"
+        "Role": "1 , 2"
       }
     },
     //usuarios activos
