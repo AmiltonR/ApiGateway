@@ -12,7 +12,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "identitymicroservice",
+          "Host": "10.244.0.10",
           "Port": 80
         }
       ]
