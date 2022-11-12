@@ -4,9 +4,7 @@
     {
         public int Id { get; set; }
         public string Carnet { get; set; }
-        public string NombreUsuario
-        {
-            get; set;
-        }
+        public string NombreUsuario { get; set; }
+        public string ApellidoUsuario { get; set; }
     }
 }

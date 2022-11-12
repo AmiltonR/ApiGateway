@@ -2,10 +2,11 @@
 {
     public class TalleresDTO
     {
-        public int Id { get; set; }
         public int IdTallerProgramacion { get; set; }
-        public int IdUsuario { get; set; }
+        public int IdUsuarioInstructor { get; set; }
+        public string NombreTaller { get; set; }
+        public int NumeroParticipantes { get; set; }
 
-        public List<UsuariosDTO> usuarios = new();
+        public List<UsuariosIDDTO> usuarios { get; set; }
     }
 }

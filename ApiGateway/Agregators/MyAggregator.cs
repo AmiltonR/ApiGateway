@@ -13,18 +13,23 @@ namespace ApiGateway.Agregators
     {
         public async Task<DownstreamResponse> Aggregate(List<HttpContext> responses)
         {
-            var talleres = await responses[0].Items.DownstreamResponse().Content.ReadFromJsonAsync<List<TalleresDTO>>();
+            var talleres = await responses[0].Items.DownstreamResponse().Content.ReadFromJsonAsync<TalleresDTO>();
             var usuarios = await responses[1].Items.DownstreamResponse().Content.ReadFromJsonAsync<List<UsuariosDTO>>();
 
             TalleresParticipantesRespuestaDTO listado = new TalleresParticipantesRespuestaDTO();
-            listado.IdTallerProgramacion = talleres[0].IdTallerProgramacion;
-
-            talleres?.ForEach(taller =>
+            talleres.usuarios.ForEach(taller =>
             {
-               taller.usuarios.AddRange(usuarios.Where(a => a.Id == taller.IdUsuario));
-                listado.usuarios.AddRange(taller.usuarios);
+                listado.usuarios.AddRange(usuarios.Where(a => a.Id == taller.IdUsuario));
             });
 
+            listado.IdTallerProgramacion = talleres.IdTallerProgramacion;
+            listado.NombreTaller = talleres.NombreTaller;
+            listado.NumeroParticipantes = talleres.NumeroParticipantes;
+            listado.IdUsuarioInstructor = talleres.IdUsuarioInstructor;
+
+            UsuariosDTO instructor = usuarios.Where(u => u.Id == talleres.IdUsuarioInstructor).FirstOrDefault();
+
+            listado.NombreInstructor = instructor.NombreUsuario + " " + instructor.ApellidoUsuario;
 
             var jsonString = JsonConvert.SerializeObject(listado, Formatting.Indented, new JsonConverter[] { new StringEnumConverter() });
 
