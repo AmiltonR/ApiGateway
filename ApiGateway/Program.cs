@@ -40,28 +40,7 @@ builder.Services.AddCors(options =>
                       });
 });
 
-
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-
-// Add services to the container.
-builder.Services.AddSingleton<MyAggregator>();
-
-builder.Services.AddOcelot().
-                    AddDelegatingHandler<NoEncodingHandler>(true)
-                    .AddTransientDefinedAggregator<MyAggregator>()
-                    .AddTransientDefinedAggregator<TalleresProgramacionAggregator>();
-
-builder.Services.AddCustomJwtAuthentication();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-
-
-//applying CORS
-app.UseCors(MyAllowSpecificOrigins);
-
-async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+async void Configure(IApplicationBuilder app)
 {
     //your code here
     var configuration = new OcelotPipelineConfiguration
@@ -91,45 +70,58 @@ bool Authorize(HttpContext ctx)
         bool auth = false;
         Claim[] claims = ctx.User.Claims.ToArray<Claim>();
         Dictionary<string, string> required = ctx.Items.DownstreamRoute().RouteClaimsRequirement;
-        Regex reor = new Regex(@"[^,\s+$ ][^\,]*[^,\s+$ ]");
-        MatchCollection matches;
 
-        Regex reand = new Regex(@"[^&\s+$ ][^\&]*[^&\s+$ ]");
-        MatchCollection matchesand;
-        int cont = 0;
-        foreach (KeyValuePair<string, string> claim in required)
+        string[] role = required.Values.ToArray();
+
+
+        string[] roleSeparateArray = role[0].Split(',');
+
+        string roleClaims = claims[1].Value;
+
+        foreach (var item in roleSeparateArray)
         {
-            matches = reor.Matches(claim.Value);
-            foreach (Match match in matches)
+            if (roleClaims == item)
             {
-                matchesand = reand.Matches(match.Value);
-                cont = 0;
-                foreach (Match m in matchesand)
-                {
-                    foreach (Claim cl in claims)
-                    {
-                        if (cl.Type == claim.Key)
-                        {
-                            if (cl.Value == m.Value)
-                            {
-                                cont++;
-                            }
-                        }
-                    }
-                }
-                if (cont == matchesand.Count)
-                {
-                    auth = true;
-                    break;
-                }
+                auth = true;
             }
         }
         return auth;
     }
 }
 
+// Add services to the container.
+builder.Services.AddSingleton<MyAggregator>();
 
-app.UseOcelot().Wait();
+builder.Services.AddOcelot().
+                    AddDelegatingHandler<NoEncodingHandler>(true)
+                    .AddTransientDefinedAggregator<MyAggregator>()
+                    .AddTransientDefinedAggregator<TalleresProgramacionAggregator>();
+
+builder.Services.AddCustomJwtAuthentication();
+
+
+var app = builder.Build();
+
+//Set environment 
+app.Environment.EnvironmentName = "Development";
+
+// Configure the HTTP request pipeline.
+
+if (app.Environment.IsDevelopment())
+{
+    builder.Configuration.AddJsonFile("ocelot-dev.json", optional: false, reloadOnChange: true);
+}
+else
+{
+    builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+}
+
+//applying CORS
+app.UseCors(MyAllowSpecificOrigins);
+Configure(app);
+
+
+//app.UseOcelot().Wait();
 app.UseAuthentication();
 app.UseAuthorization();
 
