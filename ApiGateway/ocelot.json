@@ -12,7 +12,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "10.0.219.234",
+          "Host": "identity",
           "Port": 80
         }
       ]
@@ -35,7 +35,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1 , 2"
+        "Role": "1,2"
       }
     },
     //usuarios activos
@@ -956,7 +956,7 @@
         "talleres",
         "usuarios"
       ],
-      "UpstreamPathTemplate": "/api/participantes",
+      "UpstreamPathTemplate": "/api/participantes/{id}",
 
       "Aggregator": "MyAggregator"
     },
