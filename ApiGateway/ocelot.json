@@ -549,10 +549,10 @@
     },
     //TALLERES
     {
-      "UpstreamPathTemplate": "/api/TallerParticipante",
+      "UpstreamPathTemplate": "/api/TallerParticipante/{id}",
       "UpstreamHttpMethod": [ "Get" ],
       "Key": "talleres",
-      "DownstreamPathTemplate": "/api/TallerParticipante",
+      "DownstreamPathTemplate": "/api/TallerParticipante/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
