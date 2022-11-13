@@ -195,7 +195,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": "1,2,3"
       }
     },
     //Get by Carnet
@@ -215,7 +215,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": "1,2,3"
       }
     },
     //Get by Carnet
@@ -235,7 +235,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": "1,2,3"
       }
     },
     {
