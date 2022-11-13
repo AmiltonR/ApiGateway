@@ -904,8 +904,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "talleres",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 7002
         }
       ],
       "AuthenticationOptions": {
