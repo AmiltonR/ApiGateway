@@ -12,7 +12,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "10.0.219.234",
+          "Host": "identity", //10.0.219.234
           "Port": 80
         }
       ]
