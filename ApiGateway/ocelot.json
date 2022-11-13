@@ -273,7 +273,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": "1,2,3"
       }
     },
     //Activar o desactivar cuenta de usuario
