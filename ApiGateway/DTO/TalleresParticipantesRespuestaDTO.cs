@@ -7,7 +7,7 @@
         public string  NombreInstructor { get; set; }
         public string NombreTaller { get; set; }
         public int NumeroParticipantes { get; set; }
-
+        public int Cupos { get; set; }
         public List<UsuariosDTO> usuarios = new();
     }
 }

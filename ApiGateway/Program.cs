@@ -83,6 +83,7 @@ bool Authorize(HttpContext ctx)
             if (roleClaims == item)
             {
                 auth = true;
+                break;
             }
         }
         return auth;
@@ -90,12 +91,14 @@ bool Authorize(HttpContext ctx)
 }
 
 // Add services to the container.
-builder.Services.AddSingleton<MyAggregator>();
+//builder.Services.AddSingleton<MyAggregator>();
 
 builder.Services.AddOcelot().
                     AddDelegatingHandler<NoEncodingHandler>(true)
                     .AddTransientDefinedAggregator<MyAggregator>()
-                    .AddTransientDefinedAggregator<TalleresProgramacionAggregator>();
+                    .AddTransientDefinedAggregator<TalleresProgramacionAggregator>()
+                    .AddTransientDefinedAggregator<TalleresProgramacionActivosAggregator>()
+                    .AddTransientDefinedAggregator<NoInscritosAggregator>();
 
 builder.Services.AddCustomJwtAuthentication();
 
@@ -103,7 +106,7 @@ builder.Services.AddCustomJwtAuthentication();
 var app = builder.Build();
 
 //Set environment 
-app.Environment.EnvironmentName = "Production";
+app.Environment.EnvironmentName = "Development";
 
 // Configure the HTTP request pipeline.
 

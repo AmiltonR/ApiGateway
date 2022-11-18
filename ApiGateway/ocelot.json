@@ -559,8 +559,35 @@
           "Host": "talleres",
           "Port": 80
         }
-      ]
-
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
+    },
+    //TALLER PARTICIPANTE
+    {
+      "UpstreamPathTemplate": "/api/noinscritos/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "noinscritos",
+      "DownstreamPathTemplate": "/api/noinscritos/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
     },
     //HORARIOS
     {
@@ -968,6 +995,15 @@
       "UpstreamPathTemplate": "/api/programaciontalleres",
 
       "Aggregator": "TalleresProgramacionAggregator"
+    },
+    {
+      "RouteKeys": [
+        "noinscritos",
+        "usuarios"
+      ],
+      "UpstreamPathTemplate": "/api/inscribir/{id}",
+
+      "Aggregator": "NoInscritosAggregator"
     }
   ]
 
