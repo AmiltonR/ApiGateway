@@ -12,7 +12,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "identity", //10.0.219.234
+          "Host": "identity",
           "Port": 80
         }
       ]
@@ -35,7 +35,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1,2"
+        "Role": "1,2,3"
       }
     },
     //usuarios activos
@@ -102,6 +102,7 @@
     {
       "UpstreamPathTemplate": "/api/Users/estudiantes",
       "UpstreamHttpMethod": [ "Get" ],
+      "Key": "usuariosestudiantes",
       "DownstreamPathTemplate": "/api/Users/estudiantes",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -115,7 +116,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": "1,3"
       }
     },
     //Usuarios Instructor
@@ -135,7 +136,7 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1"
+        "Role": "1,2,3"
       }
     },
     //Usuarios Instructor by id
@@ -336,7 +337,7 @@
         "Role": "1"
       }
     },
-    //Cambiar de rol estudiante a rol instructor
+    //Cambiar de rol estudiante a rol instructor ???
     {
       "UpstreamPathTemplate": "/api/Instructor/cambiorol",
       "UpstreamHttpMethod": [ "Post" ],
@@ -565,15 +566,35 @@
         "AllowedScopes": []
       },
       "RouteClaimsRequirement": {
-        "Role": "1,2"
+        "Role": "1"
       }
     },
     //TALLER PARTICIPANTE
     {
-      "UpstreamPathTemplate": "/api/noinscritos/{id}",
+      "UpstreamPathTemplate": "/api/tallerparticipante/noinscritos/{id}",
       "UpstreamHttpMethod": [ "Get" ],
       "Key": "noinscritos",
-      "DownstreamPathTemplate": "/api/noinscritos/{id}",
+      "DownstreamPathTemplate": "/api/tallerparticipante/noinscritos/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,3"
+      }
+    },
+    //Taller Participante POST TODO: colocar en ocelot
+    {
+      "UpstreamPathTemplate": "/api/tallerparticipante/inscribir",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/tallerparticipante/inscribir",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -726,6 +747,26 @@
         "Role": "1"
       }
     },
+    //Get talleres programacion activos
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion/active",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion/active",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,3"
+      }
+    },
     {
       "UpstreamPathTemplate": "/api/TallerProgramacion",
       "UpstreamHttpMethod": [ "Put" ],
@@ -743,6 +784,46 @@
       },
       "RouteClaimsRequirement": {
         "Role": "1"
+      }
+    },
+    //  Obtiene los talleres por instructor
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion/instructor/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion/instructor/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,3"
+      }
+    },
+    //  Obtiene el taller activo por estudiante
+    {
+      "UpstreamPathTemplate": "/api/TallerProgramacion/activo/estudiante/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/TallerProgramacion/activo/estudiante/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
       }
     },
     //GET BY ID
@@ -974,6 +1055,27 @@
       "RouteClaimsRequirement": {
         "Role": "1"
       }
+    },
+    //Para agregado
+    {
+      "UpstreamPathTemplate": "/api/tallerprogramacion/active",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "talleresactivos",
+      "DownstreamPathTemplate": "/api/tallerprogramacion/active",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2,3"
+      }
     }
   ],
   //AGREGADOS
@@ -989,6 +1091,14 @@
     },
     {
       "RouteKeys": [
+        "noinscritos",
+        "usuariosestudiantes"
+      ],
+      "UpstreamPathTemplate": "/api/inscribir/{id}",
+      "Aggregator": "NoInscritosAggregator"
+    },
+    {
+      "RouteKeys": [
         "talleresProgramacion",
         "usuarios"
       ],
@@ -998,12 +1108,12 @@
     },
     {
       "RouteKeys": [
-        "noinscritos",
+        "talleresactivos",
         "usuarios"
       ],
-      "UpstreamPathTemplate": "/api/inscribir/{id}",
+      "UpstreamPathTemplate": "/api/talleresprogramacion/activos",
 
-      "Aggregator": "NoInscritosAggregator"
+      "Aggregator": "TalleresProgramacionActivosAggregator"
     }
   ]
 
