@@ -1076,6 +1076,84 @@
       "RouteClaimsRequirement": {
         "Role": "1,2,3"
       }
+    },
+    //SOLICITUDES
+    {
+      "UpstreamPathTemplate": "/api/solicitud",
+      "Key": "solicitudes",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/solicitud",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/solicitud",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/solicitud",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/solicitud/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/solicitud/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/solicitud/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/solicitud/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     }
   ],
   //AGREGADOS
@@ -1114,6 +1192,16 @@
       "UpstreamPathTemplate": "/api/talleresprogramacion/activos",
 
       "Aggregator": "TalleresProgramacionActivosAggregator"
+    },
+    {
+      "RouteKeys": [
+        "solicitudes",
+        "usuariosestudiantes",
+        "talleresProgramacion"
+      ],
+      "UpstreamPathTemplate": "/api/solicitudes",
+
+      "Aggregator": "SolicitudesAggregator"
     }
   ]
 

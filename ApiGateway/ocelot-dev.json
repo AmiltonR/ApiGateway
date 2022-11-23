@@ -590,11 +590,30 @@
         "Role": "1,3"
       }
     },
-    //Taller Participante POST TODO: colocar en ocelot
+    //Taller Participante POST
     {
       "UpstreamPathTemplate": "/api/tallerparticipante/inscribir",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamPathTemplate": "/api/tallerparticipante/inscribir",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/tallerparticipante/inscripcion/{id}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/tallerparticipante/inscripcion/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -1076,6 +1095,84 @@
       "RouteClaimsRequirement": {
         "Role": "1,2,3"
       }
+    },
+    //SOLICITUDES
+    {
+      "UpstreamPathTemplate": "/api/solicitud",
+      "Key": "solicitudes",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/solicitud",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/solicitud",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/solicitud",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,2"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/solicitud/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/solicitud/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/solicitud/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/solicitud/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     }
   ],
   //AGREGADOS
@@ -1114,6 +1211,16 @@
       "UpstreamPathTemplate": "/api/talleresprogramacion/activos",
 
       "Aggregator": "TalleresProgramacionActivosAggregator"
+    },
+    {
+      "RouteKeys": [
+        "solicitudes",
+        "usuariosestudiantes",
+        "talleresProgramacion"
+      ],
+      "UpstreamPathTemplate": "/api/solicitudes",
+
+      "Aggregator": "SolicitudesAggregator"
     }
   ]
 
