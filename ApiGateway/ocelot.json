@@ -610,6 +610,45 @@
         "Role": "1,2"
       }
     },
+    {
+      "UpstreamPathTemplate": "/api/tallerparticipante",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/tallerparticipante",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    //Taller Participante - Acepta solicitud 
+    {
+      "UpstreamPathTemplate": "/api/tallerparticipante/inscripción/{id}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/tallerparticipante/inscripcion/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
     //HORARIOS
     {
       "UpstreamPathTemplate": "/api/horario",
@@ -1153,6 +1192,45 @@
       },
       "RouteClaimsRequirement": {
         "Role": "1"
+      }
+    },
+    //NOTIFICACIONES
+    {
+      "UpstreamPathTemplate": "/api/notificacion/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/notificacion/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,3"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/notificacion/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/notificacion/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "talleres",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1,3"
       }
     }
   ],

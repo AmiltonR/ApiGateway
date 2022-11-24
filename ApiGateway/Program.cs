@@ -107,7 +107,7 @@ builder.Services.AddCustomJwtAuthentication();
 var app = builder.Build();
 
 //Set environment 
-app.Environment.EnvironmentName = "Production";
+app.Environment.EnvironmentName = "Development";
 
 // Configure the HTTP request pipeline.
 
