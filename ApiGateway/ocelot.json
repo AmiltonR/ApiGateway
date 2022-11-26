@@ -631,7 +631,7 @@
     },
     //Taller Participante - Acepta solicitud 
     {
-      "UpstreamPathTemplate": "/api/tallerparticipante/inscripción/{id}",
+      "UpstreamPathTemplate": "/api/tallerparticipante/inscripcion/{id}",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamPathTemplate": "/api/tallerparticipante/inscripcion/{id}",
       "DownstreamScheme": "http",
