@@ -493,8 +493,27 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/api/BooksDetails/libro/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/BooksDetails/libro/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7003
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/api/BooksDetails",
-      "UpstreamHttpMethod": ["Post"],
+      "UpstreamHttpMethod": [ "Post" ],
       "DownstreamPathTemplate": "/api/BooksDetails",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -1326,7 +1345,7 @@
     {
       "RouteKeys": [
         "prestamos",
-        "usuarios"
+        "usuarios",
       ],
       "UpstreamPathTemplate": "/api/prestamos",
 
