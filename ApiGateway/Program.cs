@@ -99,7 +99,8 @@ builder.Services.AddOcelot().
                     .AddTransientDefinedAggregator<TalleresProgramacionAggregator>()
                     .AddTransientDefinedAggregator<TalleresProgramacionActivosAggregator>()
                     .AddTransientDefinedAggregator<NoInscritosAggregator>()
-                    .AddTransientDefinedAggregator<SolicitudesAggregator>();
+                    .AddTransientDefinedAggregator<SolicitudesAggregator>()
+                    .AddTransientDefinedAggregator<PrestamoEncabezadoAggregator>();
 
 builder.Services.AddCustomJwtAuthentication();
 
@@ -107,7 +108,7 @@ builder.Services.AddCustomJwtAuthentication();
 var app = builder.Build();
 
 //Set environment 
-app.Environment.EnvironmentName = "Production";
+app.Environment.EnvironmentName = "Development";
 
 // Configure the HTTP request pipeline.
 

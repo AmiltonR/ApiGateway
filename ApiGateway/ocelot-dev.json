@@ -434,6 +434,7 @@
         "Role": "1"
       }
     },
+    //LIBROS DETALLE
     {
       "UpstreamPathTemplate": "/api/BooksDetails/{id}",
       "UpstreamHttpMethod": [ "Get" ],
@@ -493,7 +494,27 @@
     },
     {
       "UpstreamPathTemplate": "/api/BooksDetails",
-      "UpstreamHttpMethod": [],
+      "UpstreamHttpMethod": ["Post"],
+      "DownstreamPathTemplate": "/api/BooksDetails",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7003
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/BooksDetails",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "libros",
       "DownstreamPathTemplate": "/api/BooksDetails",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -1232,6 +1253,27 @@
       "RouteClaimsRequirement": {
         "Role": "1,3"
       }
+    },
+    //Encabezado de Prestamos
+    {
+      "UpstreamPathTemplate": "/api/prestamoencabezado",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "prestamos",
+      "DownstreamPathTemplate": "/api/prestamoencabezado",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7005
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
     }
   ],
   //AGREGADOS
@@ -1280,6 +1322,15 @@
       "UpstreamPathTemplate": "/api/solicitudes",
 
       "Aggregator": "SolicitudesAggregator"
+    },
+    {
+      "RouteKeys": [
+        "prestamos",
+        "usuarios"
+      ],
+      "UpstreamPathTemplate": "/api/prestamos",
+
+      "Aggregator": "PrestamoEncabezadoAggregator"
     }
   ]
 
