@@ -100,7 +100,8 @@ builder.Services.AddOcelot().
                     .AddTransientDefinedAggregator<TalleresProgramacionActivosAggregator>()
                     .AddTransientDefinedAggregator<NoInscritosAggregator>()
                     .AddTransientDefinedAggregator<SolicitudesAggregator>()
-                    .AddTransientDefinedAggregator<PrestamoEncabezadoAggregator>();
+                    .AddTransientDefinedAggregator<PrestamoEncabezadoAggregator>()
+                    .AddTransientDefinedAggregator<PrestamoDetalleAggregator>();
 
 builder.Services.AddCustomJwtAuthentication();
 
