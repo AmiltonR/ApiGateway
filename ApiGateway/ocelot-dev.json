@@ -1295,6 +1295,25 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/api/prestamoencabezado",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/prestamoencabezado",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7005
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "1"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/api/prestamoencabezado/{id}",
       "UpstreamHttpMethod": [ "Delete" ],
       "DownstreamPathTemplate": "/api/prestamoencabezado/{id}",
