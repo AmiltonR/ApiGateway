@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: apigatewayocelot.azurecr.io/amiltonr/apigateway:latest
+        image: apigatewayocelot.azurecr.io/amiltonr/apigateway
         imagePullPolicy: Always
         ports:
         - containerPort: 80
