@@ -493,25 +493,6 @@
     },
     {
       "UpstreamPathTemplate": "/api/BooksDetails",
-      "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/api/BooksDetails",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "10.0.183.94",
-          "Port": 80
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
-      "RouteClaimsRequirement": {
-        "Role": "1"
-      }
-    },
-    {
-      "UpstreamPathTemplate": "/api/BooksDetails",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamPathTemplate": "/api/BooksDetails",
       "DownstreamScheme": "http",
